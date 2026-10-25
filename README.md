@@ -8,7 +8,7 @@ over Wi-Fi. It combines embedded firmware with a browser-based interface
 for displaying text, images, video, clocks, timers, weather information,
 countdowns, and device details.
 
-> **Note:** Read .
+> **Note:** Read Completely.
 
 ## Features
 
