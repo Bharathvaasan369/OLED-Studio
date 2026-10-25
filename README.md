@@ -1,19 +1,21 @@
 # OLED Studio v3
 
 **A web-controlled OLED display system built with ESP8266 NodeMCU and a
-128×64 SH1106 OLED.** Control and customize the display from a browser
-over Wi-Fi, without needing a laptop or Serial Monitor for everyday use.
+128×64 SH1106 OLED.**
 
-OLED Studio brings embedded systems and web technologies together in a
-compact project for displaying text, images, video, clocks, timers,
-weather information, countdowns, and device details.
+OLED Studio lets you control and customize OLED content from a browser
+over Wi-Fi. It combines embedded firmware with a browser-based interface
+for displaying text, images, video, clocks, timers, weather information,
+countdowns, and device details.
+
+> **Note:** Read .
 
 ## Features
 
 OLED Studio v3 includes **10 modes**:
 
-1.  **Writing Board** --- Use the display as a writing board.
-2.  **Video** --- Play visual content, with dithering, brightness, and
+1.  **Writing Board** --- Use the OLED as a writing board.
+2.  **Video** --- Play visual content with dithering, brightness, and
     contrast controls.
 3.  **Image** --- Display images with dithering.
 4.  **Text** --- Display custom text.
@@ -29,11 +31,9 @@ OLED Studio v3 includes **10 modes**:
     hh:mm:ss; the event is saved on the device.
 10. **Device Info** --- View device information on the OLED.
 
-**Rec Playback has been removed.**
-
 ### Additional capabilities
 
--   Browser-based control over the ESP8266's Wi-Fi connection.
+-   Browser-based control through the ESP8266's Wi-Fi connection.
 -   Settings retained across reboots: brightness, 180° rotation, invert,
     idle dim, clock style, and event.
 -   Keyboard shortcuts (`1`--`9` and `0`).
@@ -63,17 +63,16 @@ OLED Studio v3 includes **10 modes**:
     -   **CPU Frequency:** 160 MHz
     -   **Flash Size:** 4 MB
 5.  Install the **U8g2** library if it is not already installed.
-6.  Connect the NodeMCU to your computer and upload the firmware by USB.
-7.  Connect to the same Wi-Fi network and open the OLED Studio web
-    interface using the address provided by the device/project.
+6.  Connect the NodeMCU to your computer and upload the firmware over
+    USB.
+7.  Connect a browser device to the same Wi-Fi network and open the OLED
+    Studio web interface using the IP address provided by the device.
 
 A LittleFS upload is **not required** according to the project
 instructions. OTA updates may be available later through **Tools → Port
-→ `oledstudio`**, depending on your PC and network setup.
+→ `oledstudio`**, depending on your computer and network setup.
 
 ## OLED wiring
-
-For the wiring documented by this project:
 
   OLED pin   NodeMCU pin
   ---------- -------------
@@ -87,11 +86,11 @@ For the wiring documented by this project:
   -----------------------------------------------------------------------
   Problem                             What to try
   ----------------------------------- -----------------------------------
-  OLED is blank                       Check Serial Monitor at `115200`
-                                      baud for the detected I²C address.
-                                      Verify SDA is connected to D2, SCL
-                                      to D1, and the display is powered
-                                      at 3.3 V.
+  OLED is blank                       Open Serial Monitor at `115200`
+                                      baud to check the detected I²C
+                                      address. Verify SDA is connected to
+                                      D2, SCL to D1, and the display is
+                                      powered at 3.3 V.
 
   Image looks garbled                 Set `I2C_CLOCK_HZ` to `100000` in
                                       the sketch.
@@ -113,16 +112,32 @@ with:
 python tools/make_web_ui.py web/index.html web_ui.h
 ```
 
+## License and usage
+
+Copyright (c) 2026 Bharathvaasan A T. All rights reserved.
+
+OLED Studio is provided under the **OLED Studio Personal Use License**,
+not the MIT License.
+
+Subject to the terms in the [`LICENSE`](LICENSE) file, individuals may
+download, study, and use the software for personal, non-commercial
+projects. Without prior written permission from the copyright holder,
+redistribution of the original source code, sharing substantial portions
+of the code, and distribution of modified versions or forks are not
+permitted.
+
+This is a custom, restrictive license; the project should not be
+described as open-source software under the standard open-source
+definition. Third-party libraries, dependencies, and assets may have
+separate license terms that continue to apply.
+
+Please read the complete [`LICENSE`](LICENSE) file before using the
+project. The license does not override third-party license requirements.
+
 ## Repository description
 
-> OLED Studio is an ESP8266-based web-controlled OLED display project
-> featuring writing board, video and image display, custom and scrolling
-> text, weather information, multiple clock styles, timers, event
-> countdowns, and device information through a browser-based Wi-Fi
-> interface.
-
-## License
-
-No license is specified in the supplied project README. Add a `LICENSE`
-file if you want to publish the project under a specific open-source
-license.
+OLED Studio is an ESP8266-based web-controlled OLED display project
+featuring writing board, video and image display, custom and scrolling
+text, weather information, multiple clock styles, timers, event
+countdowns, and device information through a browser-based Wi-Fi
+interface.
